@@ -1,45 +1,22 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import {useState} from 'react'
 import './App.css'
+import DropArea from './components/DropArea/DropArea'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="container">
+      <div className="uploader-box">
+        <h1 className="title">Upload your image</h1>
+        <p className="title-description">File should be Jpeg, Png,...</p>
+        <DropArea />
+        <p className="info">or</p>
+        <input type="file" name="image" id="image" />
+
+        <label className="custom-file-upload">
+          <input type="file" />
+          Choose a file
+        </label>
+      </div>
     </div>
   )
 }
-
-export default App
