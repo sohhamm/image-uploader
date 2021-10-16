@@ -1,0 +1,54 @@
+.box {
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  width: 400.36px;
+  height: 143.57px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 1% 5%;
+}
+
+.header {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+
+  letter-spacing: -0.035em;
+  /* margin: 36px 0px 30px 32px; */
+
+  color: #4f4f4f;
+}
+
+.loaderContainer {
+  width: 100%;
+  height: 6px;
+  margin: 0 auto;
+  background: #f2f2f2;
+  border-radius: 8px;
+}
+
+.loader {
+  width: 30%;
+  height: 6px;
+  background: #2f80ed;
+  border-radius: 8px;
+  animation: slider 2s infinite linear reverse;
+}
+
+@keyframes slider {
+  25% {
+    transform: translateX(50%);
+  }
+  50% {
+    transform: translateX(57%);
+  }
+  75% {
+    transform: translateX(100%);
+  }
+  /* 100% {
+    transform: translateX(100%);
+  } */
+}
