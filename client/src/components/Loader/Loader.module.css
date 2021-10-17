@@ -35,20 +35,20 @@
   height: 6px;
   background: #2f80ed;
   border-radius: 8px;
-  animation: slider 2s infinite linear reverse;
+  animation: slider 1.5s infinite linear;
 }
 
 @keyframes slider {
   25% {
-    transform: translateX(50%);
+    transform: translateX(58%);
   }
   50% {
-    transform: translateX(57%);
+    transform: translateX(116%);
   }
   75% {
-    transform: translateX(100%);
+    transform: translateX(174%);
   }
-  /* 100% {
-    transform: translateX(100%);
-  } */
+  100% {
+    transform: translateX(232%);
+  }
 }
