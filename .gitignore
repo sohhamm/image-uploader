@@ -12,3 +12,4 @@ build
 !.yarn/sdks
 !.yarn/versions
 server/.yarn/*
+server/src/images

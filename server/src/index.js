@@ -7,13 +7,14 @@ import {dirname} from 'path'
 
 dotenv.config()
 const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const __dirname = dirname(__filename.replace('src', 'images/'))
 const PORT = process.env.PORT || 5000
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(fileUpload())
+app.use(express.static('images'))
 
 app.post('/upload', (req, res) => {
   let image
@@ -24,11 +25,17 @@ app.post('/upload', (req, res) => {
   }
 
   image = req.files.image
-  uploadPath = __dirname + '/images/' + image.name
+  uploadPath = __dirname + image.name
+
+  const url = `http://localhost:${PORT}`
 
   image.mv(uploadPath, err => {
     if (err) return res.status(500).send(err)
-    res.send('File uploaded!')
+
+    res.json({
+      data: `${url}/${image.name}`,
+      message: 'success',
+    })
   })
 })
 

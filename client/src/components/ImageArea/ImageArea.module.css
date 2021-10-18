@@ -1,0 +1,35 @@
+.imageContainer {
+  width: 338px;
+  height: 224.4px;
+  border-radius: 12px;
+}
+
+img {
+  object-fit: cover;
+  width: 338px;
+  height: 224.4px;
+  border-radius: 12px;
+}
+
+.copyLink {
+  width: 338px;
+  height: 34px;
+  background: #f6f8fb;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+span {
+  margin-left: auto;
+}
+button {
+  width: 74px;
+  height: 30px;
+  background-color: #2f80ed;
+  border-radius: 8px;
+  border: none;
+  color: white;
+}

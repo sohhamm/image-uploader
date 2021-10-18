@@ -7,7 +7,7 @@ import {validateFile} from '../../utils/validate-files'
 
 const url = 'http://localhost:5000'
 
-export default function DropArea() {
+export default function DropArea({setIsUploading, setImageData}) {
   const handleDragEnter = e => {
     e.preventDefault()
   }
@@ -22,15 +22,17 @@ export default function DropArea() {
     if (validateFile(files[0])) {
       const data = new FormData()
       data.append('image', files[0])
-      // make api call
+      setIsUploading(true)
       const res = await (
         await fetch(`${url}/upload`, {
           method: 'POST',
           body: data,
         })
       ).json()
-
-      console.log({res})
+      setIsUploading(false)
+      if (res.message === 'success') {
+        setImageData(res.data)
+      }
     }
   }
 
