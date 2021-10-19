@@ -21,15 +21,32 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 0 1em;
+  padding-right: 1px;
+  margin-top: 25px;
+  box-sizing: border-box;
 }
 span {
   margin-left: auto;
 }
 button {
-  width: 74px;
   height: 30px;
   background-color: #2f80ed;
   border-radius: 8px;
   border: none;
   color: white;
+  padding: 0 1rem;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1a75ed;
+}
+
+.link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 1rem;
 }
