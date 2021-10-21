@@ -9,15 +9,20 @@ export const handleFiles = async ({files, setIsUploading, setImageData}) => {
     const data = new FormData()
     data.append('image', files[0])
     setIsUploading(true)
-    const res = await (
-      await fetch(`${url}/upload`, {
-        method: 'POST',
-        body: data,
-      })
-    ).json()
-    setIsUploading(false)
-    if (res.message === 'success') {
-      setImageData(res.data)
+    try {
+      const res = await (
+        await fetch(`${url}/upload`, {
+          method: 'POST',
+          body: data,
+        })
+      ).json()
+      setIsUploading(false)
+      if (res.message === 'success') {
+        setImageData(res.data)
+      }
+    } catch (err) {
+      console.error(err)
+      setIsUploading(false)
     }
   }
 }
