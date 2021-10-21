@@ -3,14 +3,19 @@ import DropArea from './components/DropArea/DropArea'
 import ImageArea from './components/ImageArea/ImageArea'
 import Loader from './components/Loader/Loader'
 import CheckIcon from './assets/check.svg'
+import {handleFiles} from './utils/handle-files'
 import './App.css'
 
 export default function App() {
   const [isUploading, setIsUploading] = React.useState(false)
   const [imageData, setImageData] = React.useState(null)
 
-  const handleSubmit = e => {
-    console.log(e)
+  const handleImageDrop = e => {
+    e.preventDefault()
+    const files = e.type === 'change' ? e.target.files : e.dataTransfer.files
+    if (files.length) {
+      handleFiles({files, setImageData, setIsUploading})
+    }
   }
 
   return (
@@ -35,6 +40,7 @@ export default function App() {
             <DropArea
               setIsUploading={setIsUploading}
               setImageData={setImageData}
+              handleImageDrop={handleImageDrop}
             />
           )}
 
@@ -42,7 +48,7 @@ export default function App() {
             <>
               <p className="info">or</p>
               <label className="custom-file-upload">
-                <input type="file" onSubmit={handleSubmit} />
+                <input type="file" onChange={handleImageDrop} />
                 Choose a file
               </label>
             </>
