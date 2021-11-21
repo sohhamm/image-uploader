@@ -6,11 +6,8 @@
     "node": ">=16",
     "npm": ">=8.0.0"
   },
+  "type": "module",
   "repository": "https://github.com/sohhamm/image-uploader.git",
   "author": "Soham Sarkar",
-  "license": "MIT",
-  "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node server/src/index.js"
-  }
+  "license": "MIT"
 }
