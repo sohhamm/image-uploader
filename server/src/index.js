@@ -16,6 +16,10 @@ app.use(express.json())
 app.use(fileUpload())
 app.use(express.static('images'))
 
+app.get('/', (_req, res) => {
+  return res.send('<h1>API is UP</h1>')
+})
+
 app.post('/upload', (req, res) => {
   let image
   let uploadPath
@@ -30,7 +34,7 @@ app.post('/upload', (req, res) => {
   //dev
   const url = `http://localhost:${PORT}`
   //prod
-  const URL = `https://image-uploader-reactv1.netlify.app/`
+  const URL = `https://image-uploader-reactv1.netlify.app`
 
   image.mv(uploadPath, err => {
     if (err) return res.status(500).send(err)
@@ -40,10 +44,6 @@ app.post('/upload', (req, res) => {
       message: 'success',
     })
   })
-})
-
-app.get('/', (_req, res) => {
-  res.send('API is UP')
 })
 
 app.listen(PORT, () =>
