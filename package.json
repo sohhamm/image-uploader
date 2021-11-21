@@ -2,6 +2,10 @@
   "name": "image-uploader",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8.0.0"
+  },
   "repository": "https://github.com/sohhamm/image-uploader.git",
   "author": "Soham Sarkar",
   "license": "MIT"

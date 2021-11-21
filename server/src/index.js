@@ -39,6 +39,10 @@ app.post('/upload', (req, res) => {
   })
 })
 
+app.get('/', (_req, res) => {
+  res.send('API is UP')
+})
+
 app.listen(PORT, () =>
   console.log(`🚀 Server ready at: http://localhost:${PORT}`),
 )
