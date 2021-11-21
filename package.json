@@ -8,5 +8,9 @@
   },
   "repository": "https://github.com/sohhamm/image-uploader.git",
   "author": "Soham Sarkar",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node server/src/index.js"
+  }
 }
