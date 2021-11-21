@@ -2,7 +2,7 @@ import {validateFile} from './validate-files'
 
 //todo refactor envs to utils
 const url = 'http://localhost:5000'
-const URL = 'https://image-uploader-react-node.herokuapp.com/'
+const URL = 'https://image-uploader-react-node.herokuapp.com'
 
 export const handleFiles = async ({files, setIsUploading, setImageData}) => {
   // * user story says one file upload at a time but we can extend it to multiple uploads if required
