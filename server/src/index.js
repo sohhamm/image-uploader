@@ -9,6 +9,7 @@ dotenv.config()
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename.replace('src', 'images/'))
 const PORT = process.env.PORT || 5000
+const host = '0.0.0.0'
 
 const app = express()
 app.use(cors())
@@ -46,6 +47,6 @@ app.post('/upload', (req, res) => {
   })
 })
 
-app.listen(PORT, () =>
+app.listen(PORT, host, () =>
   console.log(`🚀 Server ready at: http://localhost:${PORT}`),
 )

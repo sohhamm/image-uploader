@@ -11,7 +11,7 @@
   "packageManager": "yarn@3.0.2",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index"
   },
   "keywords": [],
   "author": "soham",
