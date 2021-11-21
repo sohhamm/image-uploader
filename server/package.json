@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": ">=16",
+    "node": "16",
     "npm": ">=8.0.0"
   },
   "type": "module",
   "packageManager": "yarn@3.0.2",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "soham",
