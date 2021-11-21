@@ -27,13 +27,16 @@ app.post('/upload', (req, res) => {
   image = req.files.image
   uploadPath = __dirname + image.name
 
+  //dev
   const url = `http://localhost:${PORT}`
+  //prod
+  const URL = `https://image-uploader-reactv1.netlify.app/`
 
   image.mv(uploadPath, err => {
     if (err) return res.status(500).send(err)
 
     res.json({
-      data: `${url}/${image.name}`,
+      data: `${URL}/${image.name}`,
       message: 'success',
     })
   })
