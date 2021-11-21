@@ -1,0 +1,8 @@
+{
+  "name": "image-uploader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sohhamm/image-uploader.git",
+  "author": "Soham Sarkar",
+  "license": "MIT"
+}
