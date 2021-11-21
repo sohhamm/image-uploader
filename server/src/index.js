@@ -35,7 +35,7 @@ app.post('/upload', (req, res) => {
   //dev
   const url = `http://localhost:${PORT}`
   //prod
-  const URL = `https://image-uploader-reactv1.netlify.app`
+  const URL = 'https://image-uploader-react-node.herokuapp.com'
 
   image.mv(uploadPath, err => {
     if (err) return res.status(500).send(err)
