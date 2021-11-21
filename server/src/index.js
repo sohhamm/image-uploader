@@ -15,7 +15,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(fileUpload())
-app.use(express.static('images'))
+app.use(express.static(__dirname + '/images'))
 
 app.get('/', (_req, res) => {
   return res.send('<h1>API is UP</h1>')
